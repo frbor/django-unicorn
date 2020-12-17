@@ -58,7 +58,7 @@ export function send(component, callback) {
       }
 
       // Redirect to the specified url if it is set
-      if (responseJson.redirect) {
+      if (responseJson.redirect && responseJson.redirect.url) {
         window.location = responseJson.redirect.url;
       }
 
