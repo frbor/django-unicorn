@@ -12,6 +12,13 @@ class ValidationView(UnicornView):
     number = ""
     date_time = datetime(2020, 9, 13, 17, 45, 14)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(**kwargs)
+
+        # hello is not defined on class
+        hello = kwargs.get("hello", "not available")
+        print(hello)
+
     def set_text_no_validation(self):
         self.text = "no validation"
 
